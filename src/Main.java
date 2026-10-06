@@ -1,13 +1,22 @@
-//TIP 要<b>运行</b>代码，请按 <shortcut actionId="Run"/> 或
-// 点击装订区域中的 <icon src="AllIcons.Actions.Execute"/> 图标。
-void main() {
-    //TIP 当文本光标位于高亮显示的文本处时按 <shortcut actionId="ShowIntentionActions"/>
-    // 查看 IntelliJ IDEA 建议如何修正。
-    IO.println(String.format("Hello and welcome!"));
+import java.util.ArrayList;
+public class Main{
+    public static void main(String[] args){
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP 按 <shortcut actionId="Debug"/> 开始调试代码。我们已经设置了一个 <icon src="AllIcons.Debugger.Db_set_breakpoint"/> 断点
-        // 但您始终可以通过按 <shortcut actionId="ToggleLineBreakpoint"/> 添加更多断点。
-        IO.println("i = " + i);
+        Expense e1 = new Expense(25.5,"food","2006-09-30");
+        Expense e2 = new Expense(21,"clothes","2006-08-30");
+        Expense e3 = new Expense(98,"go out","2006-09-11");
+        Expense e4 = new Expense(11,"shop","2006-09-23");
+
+        ArrayList<Expense> expenses = new ArrayList<>();
+        expenses.add(e1);
+        expenses.add(e2);
+        expenses.add(e3);
+        expenses.add(e4);
+
+
+        for (Expense e : expenses){
+            e.printInfo();
+        }
+        System.out.println(expenses.size());
     }
 }
