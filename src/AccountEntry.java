@@ -1,15 +1,16 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AccountEntry {
     public static void main(String[] args) {
 
         boolean running = true;
+        String filename = "expense.text";
         Scanner scanner = new Scanner(System.in);
         ExpenseManager manager = new ExpenseManager();
 
 
         while (running){
+            manager.loadFromFile(filename);
             System.out.println("""
                 ===== 记账本 =====
                 1.添加一笔支出
@@ -35,6 +36,7 @@ public class AccountEntry {
                     System.out.println("$"+manager.getTotal());
                     break;
                 case 4:
+                    manager.saveToFile(filename);
                     System.out.println("再见");
                     running = false;
                     break;
